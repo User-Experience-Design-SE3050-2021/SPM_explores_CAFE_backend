@@ -13,6 +13,11 @@ app.use(fileUpload({
     useTempFiles: true
 }))
 
+// Routes
+app.use('/api', require('./routes/foodsRouter'))
+// app.use('/api', require('./routes/upload'))
+app.use('/api', require('./routes/upload'))
+
 //connect to DB
 const URI = process.env.MONGODB_URL
 mongoose.connect(URI, {
